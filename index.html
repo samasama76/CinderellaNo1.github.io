@@ -379,7 +379,12 @@ function renderTable() {
       loadVideo(currentIndex, true);
     });
     const tdUrl = document.createElement('td');
-    tdUrl.textContent = item.url;
+    const aLink = document.createElement('a');
+    aLink.href = item.url;
+    aLink.textContent = item.url;
+    aLink.target = '_blank';
+    aLink.rel = 'noopener noreferrer';
+    tdUrl.appendChild(aLink);
     tr.appendChild(tdName);
     tr.appendChild(tdUrl);
  
