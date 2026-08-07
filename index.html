@@ -94,6 +94,7 @@ TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
     <br>2026/07/31:藍子未央追加
     <br>2026/08/01:凛卯月追加。<b>これで190名分揃いました。</b><br>応援再生モード追加。いったん最後まで再生させることで短期間離脱と認識されない形にします。
     <br>2026/08/03:総選挙投票開始に伴い井村雪菜への投票リンクを追加。皆様、井村雪菜への投票よろしくお願い致します！！！！！！！！！！！！！！
+    <br>2026/08/07:10再生ごとにシンデレラNo1を再生するように変更(少しでも再生数カウントに寄与してあげたい…)。応援再生モードだと最後まで流れます。
   </p>
 </details>
 <details>
@@ -108,7 +109,7 @@ TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
 </details>
 
 <details>
-  <summary>再生カウントの所感と応援再生モードについて</summary>
+  <summary>再生カウントの所感と応援再生モードについて(クリックで表示)</summary>
   <p>
     よく言われるのが
     <br>「同じ動画を短時間に何度もループ再生すると一定以上はカウントされにくくなる」
@@ -144,6 +145,10 @@ TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
 </table>
  
 <script>
+const MV_LIST = [
+  { name: "シンデレラNo1", url: "https://youtu.be/jRN8wLjkBPY&t=0", first_time: 0 },
+]
+
 const VIDEO_LIST = [
   { name: "安部菜々", url: "https://youtu.be/ffYNgHois6g&t=573", first_time: 0 },
   { name: "佐藤 心", url: "https://youtu.be/ffYNgHois6g&t=1278", first_time: 621 },
@@ -376,16 +381,20 @@ function extractStartSeconds(url) {
 }
  
 // --- 配列をランダムにシャッフル(Fisher-Yates) ---
-function shuffle(arr) {
+function shuffle(arr, mv_arr) {
   const a = arr.slice();
   for (let i = a.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [a[i], a[j]] = [a[j], a[i]];
   }
+  // --- 10個ごとにシンデレラNo1のMVを挿れる ---
+  for (let i = 10; i < a.length; i += 11) {
+    a.splice(i, 0, mv_arr[0]);
+  }
   return a;
 }
  
-const playlist = shuffle(VIDEO_LIST);
+const playlist = shuffle(VIDEO_LIST, MV_LIST);
 let currentIndex = 0;
 let switchTimer = null;
 let player = null;
