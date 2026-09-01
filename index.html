@@ -74,7 +74,11 @@ TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
 <div id="player-wrap">
   <div id="player"></div>
 </div>
-<p><a href="https://idolmaster-official.jp/cinderellagirls/vote2026/vote/idol/imura_setsuna">井村雪菜への投票もお願いします！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！</a></p>
+<p><a href="https://idolmaster-official.jp/cinderellagirls/vote2026/vote/idol/imura_setsuna">井村雪菜への投票もお願いします！！！！！！！！！！！！！！！！！！！！</a></p>
+
+<br>
+<p><a href="https://www.sakaseru.jp/mina/event/e36077f7dfe645fb95f50f3fa56eb215">12月9日の井村雪菜さん登場15周年をお祝いした応援広告企画実施中です！！！！</a></p>
+<br>
 <a href="https://x.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Post</a><script async src="https://platform.x.com/widgets.js" charset="utf-8"></script> 
 <details>
   <summary><b>このサイトの説明！！！！！(クリックで表示)</b></summary>
@@ -96,14 +100,16 @@ TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
     <br>2026/08/01:凛卯月追加。<b>これで190名分揃いました。</b><br>応援再生モード追加。いったん最後まで再生させることで短期間離脱と認識されない形にします。
     <br>2026/08/03:総選挙投票開始に伴い井村雪菜への投票リンクを追加。皆様、井村雪菜への投票よろしくお願い致します！！！！！！！！！！！！！！
     <br>2026/08/07:10再生ごとにシンデレラNo1を再生するように変更(少しでも再生数カウントに寄与してあげたい…)。応援再生モードだと最後まで流れます。
-    <br>2026/08/24:Youtubeの再生仕様が変わったので諸々変更。試験用の超効率モードも作って見ました。5秒で動画が切り替わります。あとループ再生をデフォにしてあります。
+    <br>2026/08/24:Youtubeの再生仕様が変わったので諸々変更。試験用の超効率モードも作って見ました。1秒で動画が切り替わります。あとループ再生をデフォにしてあります。
+    <br>2026/09/01:超効率モード1秒に変更。ループ再生をデフォから解除
+    <br>井村雪菜登場15周年の応援広告について記載(皆様のご参加をお待ちしております！！！)
   </p>
 </details>
 <details>
   <summary><b>注意事項(クリックで表示)</b></summary>
   <p>
     <br><span style="background: yellow;"><b>Youtubeの再生仕様が変わったので1秒でも見ればカウントされるらしいです。</b></span>
-    <br><span style="background: yellow;"><b>ただし同一環境からの連続ループ再生がカウントされるかどうかはまだ未知数です。</b></span>
+    <br><span style="background: yellow;"><b>ただし同一環境からの連続ループ再生は以前よりカウントされないっぽいので一周回した後2時間ぐらい経ってからもう一回回すのがいいと思われます(しらんけど)</b></span>
   </p>
 </details>
 
@@ -128,8 +134,8 @@ TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
 
 
 <div id="options">
-  <label><input type="checkbox" id="loopCheckbox" checked> 最後まで再生したら最初から再生する</label><br><br>
-  <label><input type="checkbox" id="ultimateModeCheckbox"> 超効率モード(試験中)<br>5秒ごとに動画を切り替えます。</label><br>
+  <label><input type="checkbox" id="loopCheckbox"> 最後まで再生したら最初から再生する</label><br><br>
+  <label><input type="checkbox" id="ultimateModeCheckbox"> 超効率モード(試験中)<br>1秒ごとに動画を切り替えます。</label><br>
   <details>
     <summary>Youtube仕様変更前前提の非推奨？オプション</summary>
     <label><input type="checkbox" id="stopAutoplayCheckbox"> 次の動画は読み込みのみ(自動再生しない)<br>50秒ごと(応援モードでは6分5秒)に自動で再生画面をクリックするようにすれば自動再生と同じようなができます。</label><br><br>
@@ -500,7 +506,7 @@ function onPlayerStateChange(event) {
       ? getRandomNumber(300000, 360000)
       : getRandomNumber(45000, 47000);
     num = ultMode
-      ? 5000
+      ? 1000
       : getRandomNumber(45000, 47000);
     switchTimer = setTimeout(() => {
       timerActive = false;
