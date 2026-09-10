@@ -103,6 +103,8 @@ TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
     <br>2026/08/24:Youtubeの再生仕様が変わったので諸々変更。試験用の超効率モードも作って見ました。1秒で動画が切り替わります。あとループ再生をデフォにしてあります。
     <br>2026/09/01:超効率モード1秒に変更。ループ再生をデフォから解除
     <br>井村雪菜登場15周年の応援広告について記載(皆様のご参加をお待ちしております！！！)
+    <br>2026/09/10:超効率モード1.5秒に変更(短すぎて一部の環境でタイマー動作が間に合わないっぽいので)。
+    <br>あと何とか100万再生までは行けたようです！
   </p>
 </details>
 <details>
@@ -506,7 +508,7 @@ function onPlayerStateChange(event) {
       ? getRandomNumber(300000, 360000)
       : getRandomNumber(45000, 47000);
     num = ultMode
-      ? 1000
+      ? 1575
       : getRandomNumber(45000, 47000);
     switchTimer = setTimeout(() => {
       timerActive = false;
