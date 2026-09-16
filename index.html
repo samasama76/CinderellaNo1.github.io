@@ -75,8 +75,6 @@ TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
   <div id="player"></div>
 </div>
 <p><a href="https://idolmaster-official.jp/cinderellagirls/vote2026/vote/idol/imura_setsuna">井村雪菜への投票もお願いします！！！！！！！！！！！！！！！！！！！！</a></p>
-
-<br>
 <p><a href="https://www.sakaseru.jp/mina/event/e36077f7dfe645fb95f50f3fa56eb215">12月9日の井村雪菜さん登場15周年をお祝いした応援広告企画実施中です！！！！</a></p>
 <br>
 <a href="https://x.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Post</a><script async src="https://platform.x.com/widgets.js" charset="utf-8"></script> 
@@ -105,6 +103,7 @@ TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
     <br>井村雪菜登場15周年の応援広告について記載(皆様のご参加をお待ちしております！！！)
     <br>2026/09/10:超効率モード1.5秒に変更(短すぎて一部の環境でタイマー動作が間に合わないっぽいので)。
     <br>あと何とか100万再生までは行けたようです！
+    <br>2026/09/16:ミッションチャレンジお疲れさまでした。サイト自体は残します。<br>井村雪菜への投票してくださった方々に感謝いたします！！！！<br>登場15周年のお祝い応援広告も企画してますのでサイトの上部から是非ご覧いただけたらと思います。
   </p>
 </details>
 <details>
@@ -157,10 +156,12 @@ TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
 </table>
  
 <script>
+// 何回か置きに差し込みたい動画のリスト
 const MV_LIST = [
   { name: "シンデレラNo1", url: "https://youtu.be/jRN8wLjkBPY&t=0", first_time: 0 },
 ]
 
+// ランダムで回したい動画のリスト
 const VIDEO_LIST = [
   { name: "安部菜々", url: "https://youtu.be/ffYNgHois6g&t=573", first_time: 0 },
   { name: "佐藤 心", url: "https://youtu.be/ffYNgHois6g&t=1278", first_time: 621 },
@@ -353,7 +354,8 @@ const VIDEO_LIST = [
   { name: "渋谷 凛", url: "https://youtu.be/JEyEm9-u7A8&t=619", first_time: 0 },
   { name: "島村卯月", url: "https://youtu.be/JEyEm9-u7A8&t=1301", first_time: 667 },
 ];
- 
+
+
 const SWITCH_SECONDS = 47;
  
 // --- URLからYouTubeのvideoIDを抽出 ---
@@ -399,10 +401,10 @@ function shuffle(arr, mv_arr) {
     const j = Math.floor(Math.random() * (i + 1));
     [a[i], a[j]] = [a[j], a[i]];
   }
-  // --- 10個ごとにシンデレラNo1のMVを挿れる ---
-  for (let i = 10; i < a.length; i += 11) {
-    a.splice(i, 0, mv_arr[0]);
-  }
+  // --- 10個ごとに何回か置きに差し込みたい動画を挿れる ---
+  // for (let i = 10; i < a.length; i += 11) {
+  //   a.splice(i, 0, mv_arr[0]);
+  // }
   return a;
 }
  
